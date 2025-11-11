@@ -10,7 +10,7 @@ public class Kalkulacka {
     private int druCislo;
     private int vypocitanyVysledok;
 
-    @Given("Uzivatel ma zadane dve cisla {int} a {int}")
+    @Given("Uzivatel ma zadane dva cisla {int} a {int}")
     public void uzivatelMaZadaneDveCislaA(int prveCislo, int druheCislo) {
         prvCislo = prveCislo;
         druCislo = druheCislo;
@@ -20,6 +20,12 @@ public class Kalkulacka {
     @When("Uzivatel spocita tieto dva cisla")
     public void uzivatelSpocitaTietoDvaCisla() {
         vypocitanyVysledok = prvCislo + druCislo;
+
+    }
+
+    @When("Uzivatel vydeli tieto dva cisla")
+    public void uzivatelVydeliTietoDvaCisla() {
+        vypocitanyVysledok = prvCislo / druCislo;
 
     }
 
