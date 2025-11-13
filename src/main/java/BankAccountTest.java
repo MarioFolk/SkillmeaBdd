@@ -21,11 +21,11 @@ public class BankAccountTest {
 
     @When("Uzivatel si na tento ucet prevedie {int} kc")
     public void uzivatelSiNaTentoUcetPrevedieKc(int ciastkaKPrevodu) {
-
+        prvyBankovyUcet.transfer(ciastkaKPrevodu);
     }
 
     @And("Uzivatel si z tohto uctu vyberie {int} kc")
     public void uzivatelSiZTohtoUctuVyberieKc(int ciastkaKVyberu) {
-
+        prvyBankovyUcet.withdraw(ciastkaKVyberu);
     }
 }
