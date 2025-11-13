@@ -1,4 +1,3 @@
-import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -8,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class BankAccountTest {
     BankAccount prvyBankovyUcet;
+    BankAccount druhyBankovyUcet;
 
     @Given("Uzivatel ma bankovy ucet s {int} kc")
     public void uzivatelMaBankovyUcetSKc(int pociatoocnyZostatokNaUcte) {
@@ -30,17 +30,17 @@ public class BankAccountTest {
     }
 
     @And("Uzivatel ma druhy bankovy ucet s {int} kc")
-    public void uzivatelMaDruhyBankovyUcetSKc(int arg0) {
-
+    public void uzivatelMaDruhyBankovyUcetSKc(int pociatocnyZostatokNaUcte) {
+        druhyBankovyUcet = new BankAccount(pociatocnyZostatokNaUcte);
     }
 
     @When("Uzivatel prevedie ciastku {int} kc z prveho na druhy bankovy ucet")
-    public void uzivatelPrevedieCiastkuKcZPrvehoNaDruhyBankovyUcet(int arg0) {
+    public void uzivatelPrevedieCiastkuKcZPrvehoNaDruhyBankovyUcet(int ciastkaPrevodu) {
 
     }
 
     @And("Na druhom uzivatelskom ucte je {int} kc")
-    public void naDruhomUzivatelskomUcteJeKc(int arg0) {
-
+    public void naDruhomUzivatelskomUcteJeKc(int predpokladanyZostatokNaUcte) {
+        assertEquals(predpokladanyZostatokNaUcte, druhyBankovyUcet.getAccountBalance());
     }
 }
