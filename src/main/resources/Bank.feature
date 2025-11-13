@@ -19,6 +19,6 @@ Feature: Bank
   Scenario: Prevod z uctu na ucet
     Given Uzivatel ma bankovy ucet s 2000 kc
     And Uzivatel ma druhy bankovy ucet s 1000 kc
-    When Uzivatel prevedie ciastku 700 kc z prveho na druhy bankovy ucet
-    Then Na uzivatelskom ucte je 1300 kc
-    And Na druhom uzivatelskom ucte je 1700 kc
+    When Uzivatel prevedie ciastku 2100 kc z prveho na druhy bankovy ucet
+    Then Na uzivatelskom ucte je 2000 kc
+    And Na druhom uzivatelskom ucte je 1000 kc
