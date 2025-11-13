@@ -28,4 +28,19 @@ public class BankAccountTest {
     public void uzivatelSiZTohtoUctuVyberieKc(int ciastkaKVyberu) {
         prvyBankovyUcet.withdraw(ciastkaKVyberu);
     }
+
+    @And("Uzivatel ma druhy bankovy ucet s {int} kc")
+    public void uzivatelMaDruhyBankovyUcetSKc(int arg0) {
+
+    }
+
+    @When("Uzivatel prevedie ciastku {int} kc z prveho na druhy bankovy ucet")
+    public void uzivatelPrevedieCiastkuKcZPrvehoNaDruhyBankovyUcet(int arg0) {
+
+    }
+
+    @And("Na druhom uzivatelskom ucte je {int} kc")
+    public void naDruhomUzivatelskomUcteJeKc(int arg0) {
+
+    }
 }

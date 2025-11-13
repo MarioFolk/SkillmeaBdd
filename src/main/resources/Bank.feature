@@ -9,3 +9,16 @@ Feature: Bank
     When Uzivatel si na tento ucet prevedie 1000 kc
     And Uzivatel si z tohto uctu vyberie 2000 kc
     Then Na uzivatelskom ucte je 500 kc
+
+  Scenario: Ucet prevod a vyber penazi - pokus o vyber viac penazi ako je zostatok
+    Given Uzivatel ma bankovy ucet s 1500 kc
+    When Uzivatel si z tohto uctu vyberie 2000 kc
+    And Uzivatel si na tento ucet prevedie 1000 kc
+    Then Na uzivatelskom ucte je 500 kc
+
+  Scenario: Prevod z uctu na ucet
+    Given Uzivatel ma bankovy ucet s 2000 kc
+    And Uzivatel ma druhy bankovy ucet s 1000 kc
+    When Uzivatel prevedie ciastku 700 kc z prveho na druhy bankovy ucet
+    Then Na uzivatelskom ucte je 1300 kc
+    And Na druhom uzivatelskom ucte je 1700 kc
