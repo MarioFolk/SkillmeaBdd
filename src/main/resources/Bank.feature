@@ -24,11 +24,13 @@ Feature: Bank
     And Na druhom uzivatelskom ucte je 1000 kc
 
   Scenario Outline: Ucet prevod a vyber penazi - viac testovacich dat
-    Given Uzivatel ma bankovy ucet s 1500 kc
-    When Uzivatel si na tento ucet prevedie 1000 kc
-    And Uzivatel si z tohto uctu vyberie 2000 kc
-    Then Na uzivatelskom ucte je 500 kc
+    Given Uzivatel ma bankovy ucet s <pociatocnyZostatok> kc
+    When Uzivatel si na tento ucet prevedie <prevod> kc
+    And Uzivatel si z tohto uctu vyberie <vyber> kc
+    Then Na uzivatelskom ucte je <konecnyZostatok> kc
 
     Examples:
       | pociatocnyZostatok | prevod | vyber | konecnyZostatok |
       | 800                | 300    | 600   | 500             |
+      | 538                | 0      | 538   | 0               |
+      | 100                | 300    | 500   | 400             |
