@@ -36,7 +36,8 @@ public class BankAccountTest {
 
     @When("Uzivatel prevedie ciastku {int} kc z prveho na druhy bankovy ucet")
     public void uzivatelPrevedieCiastkuKcZPrvehoNaDruhyBankovyUcet(int ciastkaPrevodu) {
-
+        prvyBankovyUcet.withdraw(ciastkaPrevodu);
+        druhyBankovyUcet.transfer(ciastkaPrevodu);
     }
 
     @And("Na druhom uzivatelskom ucte je {int} kc")
